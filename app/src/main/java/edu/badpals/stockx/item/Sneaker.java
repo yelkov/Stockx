@@ -8,7 +8,7 @@ public class Sneaker implements Item{
     private int sale = 0;
     private int ask = 0;
     private int bid = 0;
-    private Offer offers;
+    private List<Offer> offers;
 
     public Sneaker(String style, String name) {
         this.style = style;
@@ -31,11 +31,6 @@ public class Sneaker implements Item{
     }
 
     @Override
-    public List<Offer> offers() {
-        return null;
-    }
-
-    @Override
     public int getAsk() {
         return this.ask;
     }
@@ -54,7 +49,14 @@ public class Sneaker implements Item{
     public void setSale(int sale) {
         this.sale = sale;
     }
-
+    @Override
+    public List<Offer> offers() {
+        return this.offers;
+    }
+    @Override
+    public void add(Offer offer){
+        this.offers.add(offer);
+    }
 
     @Override
     public String toString(){
