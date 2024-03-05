@@ -1,5 +1,8 @@
 package edu.badpals.stockx;
 
+import edu.badpals.stockx.item.Item;
+import edu.badpals.stockx.item.Sneaker;
+
 /**
  * StockX nació en Detroit, y allí siguen haciendo
  * las cosas a la manera tradicional, 
