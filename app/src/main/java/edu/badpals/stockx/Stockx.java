@@ -33,8 +33,8 @@ public class Stockx {
          * para conocer que propiedades
          * de la zapatilla han de printarse.
          */
-/*
-        Item sneaker = new Sneaker("555088-105", "Jordan 1 Retro High Dark Mocha");
+
+        Sneaker sneaker = new Sneaker("555088-105", "Jordan 1 Retro High Dark Mocha");
         System.out.println(Stockx.draw(sneaker));
 
         /**
@@ -43,10 +43,10 @@ public class Stockx {
          * en sus offers.
          */
 
-/*
+
     }
 
-    public static String draw(Item sneaker) {
+    public static String draw(Sneaker sneaker) {
         return
                 "\n\n\t\t" + sneaker.getAsk() + " Buy\t"
                         + sneaker.getBid() + " Sell \n" +
@@ -61,6 +61,5 @@ public class Stockx {
                         "\t" + sneaker.toString() + "\n" +
                         "\t\tlast sale: " + sneaker.getSale();
     }
-*/
-}
+
 }
