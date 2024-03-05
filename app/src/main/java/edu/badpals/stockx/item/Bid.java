@@ -17,7 +17,7 @@ public class Bid implements Offer{
         return this.bid;
     }
     @Override
-    public int compareTo(Offer offer){
-        return 5;
+    public int compareTo(Offer bid){
+        return this.bid.compareTo(bid.value());
     }
 }

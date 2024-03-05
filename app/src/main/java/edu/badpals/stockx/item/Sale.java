@@ -17,7 +17,7 @@ public class Sale implements Offer{
         return this.sale;
     }
     @Override
-    public int compareTo(Offer offer){
-        return 5;
+    public int compareTo(Offer sale){
+        return this.sale.compareTo(sale.value());
     }
 }
