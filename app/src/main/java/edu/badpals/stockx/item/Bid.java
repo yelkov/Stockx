@@ -20,4 +20,9 @@ public class Bid implements Offer{
     public int compareTo(Offer bid){
         return this.bid.compareTo(bid.value());
     }
+
+    @Override
+    public String toString(){
+        return "\t"+this.size() +"\t"+ this.value()+"\n";
+    }
 }
