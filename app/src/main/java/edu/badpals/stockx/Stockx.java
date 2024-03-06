@@ -1,6 +1,9 @@
 package edu.badpals.stockx;
 
+import edu.badpals.stockx.criteria.Bids;
+import edu.badpals.stockx.criteria.Criteria;
 import edu.badpals.stockx.item.Bid;
+import edu.badpals.stockx.item.Ask;
 import edu.badpals.stockx.item.Item;
 import edu.badpals.stockx.item.Sneaker;
 
@@ -51,7 +54,33 @@ public class Stockx {
         sneaker.add(new Bid("13", 338));
         sneaker.add(new Bid("9.5", 480));
 
+        /**
+         * Crear asks
+         * y añadirlas a la zapatilla
+         * en sus offers.
+         */
+
+        Ask ask = new Ask("13", 288);
+        sneaker.add(ask);
+        sneaker.add(new Ask("6", 600));
+        sneaker.add(new Ask("9.5", 333));
+        sneaker.add(new Ask("9.5", 340));
+        sneaker.add(new Ask("13", 330));
+
+        /**
+         * Crear el filtro "Bids" que filtra
+         * solo las bids de entre las
+         * offers de la zapatilla.
+         */
+
+        Criteria bids = new Bids();
+        System.out.println("\n\t\t All BIDS");
+        bids.checkCriteria(sneaker).forEach(System.out::print);
+
     }
+
+
+
 
     public static String draw(Sneaker sneaker) {
         return
