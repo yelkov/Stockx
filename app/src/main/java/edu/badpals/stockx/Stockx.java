@@ -181,6 +181,27 @@ public class Stockx {
                 sizeSales.get(sizeSales.size() -1).value());
         System.out.println("\n\t\t LAST SALE 9.5 US: " + sneaker.getSale());
 
+        /**
+         * Reutiliza el filtro AndCriteria
+         * para filtrar las bids de la talla 9.5
+         */
+
+        System.out.println("\n\t\t BIDS 9.5 US");
+        bids = new Bids();
+        Criteria andSizeBids = new AndCriteria(size, bids);
+        andSizeBids.checkCriteria(sneaker).forEach(System.out::print);
+
+        /**
+         * Crea un filtro Max(size, bids)
+         * que devuelva el maximo de las bids
+         * de una talla.
+         */
+
+        Criteria sizeMaxBid = new Max(size, bids);
+        List<Offer> sizeBid = sizeMaxBid.checkCriteria(sneaker);
+        sneaker.setBid(sizeBid.isEmpty()? 0 : sizeBid.get(0).value());
+        System.out.println("\n\t\t MAX BID 9.5 US: " + sneaker.getBid());
+
     }
 
 
