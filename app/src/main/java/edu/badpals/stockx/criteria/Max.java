@@ -19,9 +19,9 @@ public class Max implements Criteria{
     @Override
     public List<Offer> checkCriteria(Item item) {
         Criteria andCriteria = new AndCriteria(this.criteria,this.otherCriteria);
-        Optional<Offer> filteredOffers = andCriteria.checkCriteria(item)
+        Optional<Offer> maxOffer = andCriteria.checkCriteria(item)
                 .stream()
                 .max(Offer::compareTo);
-        return filteredOffers.isPresent()? List.of(filteredOffers.get()) : List.of();
+        return maxOffer.isPresent()? List.of(maxOffer.get()) : List.of();
     }
 }
