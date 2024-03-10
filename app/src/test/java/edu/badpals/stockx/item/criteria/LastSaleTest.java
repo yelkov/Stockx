@@ -2,8 +2,8 @@ package edu.badpals.stockx.item.criteria;
 
 import edu.badpals.stockx.criteria.Criteria;
 import edu.badpals.stockx.criteria.LastSale;
-import edu.badpals.stockx.criteria.Sales;
 import edu.badpals.stockx.item.*;
+import org.junit.Test;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class LastSaleTest {
-
+    @Test
     public void lastSaleTest() {
         Item sneaker = new Sneaker("555088-105", "Jordan 1");
         sneaker.add(new Bid("5.5", 550));
