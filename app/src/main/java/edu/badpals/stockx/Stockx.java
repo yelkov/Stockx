@@ -1,9 +1,6 @@
 package edu.badpals.stockx;
 
-import edu.badpals.stockx.criteria.Asks;
-import edu.badpals.stockx.criteria.Bids;
-import edu.badpals.stockx.criteria.Criteria;
-import edu.badpals.stockx.criteria.MaxBid;
+import edu.badpals.stockx.criteria.*;
 import edu.badpals.stockx.item.*;
 
 import java.util.List;
@@ -99,6 +96,39 @@ public class Stockx {
         List<Offer> maximum = maxBid.checkCriteria(sneaker);
         sneaker.setBid(maximum.isEmpty()? 0 : maximum.get(0).value());
         System.out.println(Stockx.draw(sneaker));
+
+        /**
+         * Muestra la ask minima
+         * de la zapatilla.
+         *
+         * Crea el filtro MinAsk que filtra
+         * el minimo de las asks de la zapatilla.
+         * Devuelve la ask minima como unico
+         * elemento de una lista de offers.
+         *
+         * Guarda esta ask minima en la propiedad
+         * ask de sneaker.
+         */
+
+        Criteria minAsk = new MinAsk();
+        List<Offer> minimum = minAsk.checkCriteria(sneaker);
+        sneaker.setAsk(minimum.isEmpty()? 0 : minimum.get(0).value());
+        System.out.println(Stockx.draw(sneaker));
+
+        /**
+         * Añade ventas (sales) de
+         * una zapatilla a sus offers.
+         * Las ventas se añaden segun fecha
+         * en la que se producen, de mas antigua
+         * a mas reciente.
+         */
+
+        Sale sale = new Sale("6", 356);
+        sneaker.add(sale);
+        sneaker.add(new Sale("9.5", 352));
+        sneaker.add(new Sale("9.5", 404));
+        sneaker.add(new Sale("13", 360));
+        sneaker.add(new Sale("13", 372));
 
     }
 
