@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.Optional;
 
 public class Max implements Criteria{
-    Criteria criteria;
-    Criteria otherCriteria;
+    private Criteria criteria;
+    private Criteria otherCriteria;
 
     public Max(Criteria criteria, Criteria otherCriteria){
         this.criteria = criteria;
