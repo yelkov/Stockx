@@ -168,7 +168,7 @@ public class Stockx {
          * un AND de los filtros Size y Sales.
          */
 
- /*       System.out.println("\n\t\t SALES 9.5 US");
+        System.out.println("\n\t\t SALES 9.5 US");
         Criteria size = new Size("9.5");
 
         sales = new Sales();
@@ -180,7 +180,7 @@ public class Stockx {
                 0 :
                 sizeSales.get(sizeSales.size() -1).value());
         System.out.println("\n\t\t LAST SALE 9.5 US: " + sneaker.getSale());
-*/
+
     }
 
 
