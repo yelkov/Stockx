@@ -1,11 +1,12 @@
 package edu.badpals.stockx;
 
+import edu.badpals.stockx.criteria.Asks;
 import edu.badpals.stockx.criteria.Bids;
 import edu.badpals.stockx.criteria.Criteria;
-import edu.badpals.stockx.item.Bid;
-import edu.badpals.stockx.item.Ask;
-import edu.badpals.stockx.item.Item;
-import edu.badpals.stockx.item.Sneaker;
+import edu.badpals.stockx.criteria.MaxBid;
+import edu.badpals.stockx.item.*;
+
+import java.util.List;
 
 /**
  * StockX nació en Detroit, y allí siguen haciendo
@@ -76,6 +77,28 @@ public class Stockx {
         Criteria bids = new Bids();
         System.out.println("\n\t\t All BIDS");
         bids.checkCriteria(sneaker).forEach(System.out::print);
+
+        Criteria asks = new Asks();
+        System.out.println("\n\t\t All ASKS");
+        asks.checkCriteria(sneaker).forEach(System.out::print);
+
+        /**
+         * Muestra la bid maxima
+         * de la zapatilla.
+         *
+         * Crea el filtro MaxBid que filtra
+         * el maximo de las bids de la zapatilla.
+         * Devuelve la bid maxima como unico
+         * elemento de una lista de offers.
+         *
+         * Guarda esta bid maxima en la
+         * propiedad bid de sneaker.
+         */
+
+        Criteria maxBid = new MaxBid();
+        List<Offer> maximum = maxBid.checkCriteria(sneaker);
+        sneaker.setBid(maximum.isEmpty()? 0 : maximum.get(0).value());
+        System.out.println(Stockx.draw(sneaker));
 
     }
 
